@@ -15,14 +15,12 @@ class MessageController
             'user_id' => 'required',
             'to_user_id' => 'required',
             'message' => 'required',
-            'is_active' => 'required',
         ]);
 
         $messageData = new Message();
         $messageData->user_id = $request->get('user_id');
         $messageData->to_user_id = $request->get('to_user_id');
         $messageData->message = $request->get('message');
-        $messageData->is_active = 1;
 
         if (!$messageData->save()) {
             return response()->json([

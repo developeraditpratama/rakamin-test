@@ -2,20 +2,22 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Message
 {
     use HasFactory;
 
-    protected $table = 'barang';
-    protected $model = App\Models\Barang::class;
+    protected $table = 'message';
+    protected $model = App\Models\Message::class;
 
     protected $fillable = [
-        'nama_barang',
-        'jumlah_barang',
-        'harga_barang',
-        'category_id',
-        'keterangan',
+        'user_id',
+        'to_user_id',
+        'message',
+        'is_active',
+        'is_read',
+        'reply_id',
     ];
 }
